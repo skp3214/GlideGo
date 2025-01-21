@@ -48,7 +48,6 @@ const SignUp = () => {
       const completeSignUp = await signUp.attemptEmailAddressVerification({
         code: verification.code,
       });
-      console.log("clerk id"+completeSignUp);
       if (completeSignUp.status === "complete") {
         await fetchAPI("/(api)/user", {
           method: "POST",
